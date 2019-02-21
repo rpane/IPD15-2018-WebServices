@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SayHelloExample", "SayHelloExample\SayHelloExample.csproj", "{F11ACDCC-3226-4BD8-AD34-98834668F5F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SayHelloClient", "SayHelloClient\SayHelloClient.csproj", "{88B0FA50-9370-4F8B-A81F-0F496B7F959B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F11ACDCC-3226-4BD8-AD34-98834668F5F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F11ACDCC-3226-4BD8-AD34-98834668F5F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F11ACDCC-3226-4BD8-AD34-98834668F5F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F11ACDCC-3226-4BD8-AD34-98834668F5F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88B0FA50-9370-4F8B-A81F-0F496B7F959B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88B0FA50-9370-4F8B-A81F-0F496B7F959B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88B0FA50-9370-4F8B-A81F-0F496B7F959B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88B0FA50-9370-4F8B-A81F-0F496B7F959B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A6E40978-8C33-4260-BD01-1BE64AD0E5E2}
+	EndGlobalSection
+EndGlobal
