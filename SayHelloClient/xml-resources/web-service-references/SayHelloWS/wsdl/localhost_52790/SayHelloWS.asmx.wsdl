@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SayHelloString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SayHelloStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SayHelloStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SayHelloJson">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SayHelloJsonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SayHelloJsonResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SayHelloObject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SayHelloObjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SayHelloObjectResult" type="tns:SayHello" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SayHello">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Greeting" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SayAllHelloObjects">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SayAllHelloObjectsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SayAllHelloObjectsResult" type="tns:ArrayOfSayHello" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSayHello">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SayHello" nillable="true" type="tns:SayHello" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SayHelloStringSoapIn">
+    <wsdl:part name="parameters" element="tns:SayHelloString" />
+  </wsdl:message>
+  <wsdl:message name="SayHelloStringSoapOut">
+    <wsdl:part name="parameters" element="tns:SayHelloStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="SayHelloJsonSoapIn">
+    <wsdl:part name="parameters" element="tns:SayHelloJson" />
+  </wsdl:message>
+  <wsdl:message name="SayHelloJsonSoapOut">
+    <wsdl:part name="parameters" element="tns:SayHelloJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="SayHelloObjectSoapIn">
+    <wsdl:part name="parameters" element="tns:SayHelloObject" />
+  </wsdl:message>
+  <wsdl:message name="SayHelloObjectSoapOut">
+    <wsdl:part name="parameters" element="tns:SayHelloObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="SayAllHelloObjectsSoapIn">
+    <wsdl:part name="parameters" element="tns:SayAllHelloObjects" />
+  </wsdl:message>
+  <wsdl:message name="SayAllHelloObjectsSoapOut">
+    <wsdl:part name="parameters" element="tns:SayAllHelloObjectsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SayHelloWSSoap">
+    <wsdl:operation name="SayHelloString">
+      <wsdl:input message="tns:SayHelloStringSoapIn" />
+      <wsdl:output message="tns:SayHelloStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SayHelloJson">
+      <wsdl:input message="tns:SayHelloJsonSoapIn" />
+      <wsdl:output message="tns:SayHelloJsonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SayHelloObject">
+      <wsdl:input message="tns:SayHelloObjectSoapIn" />
+      <wsdl:output message="tns:SayHelloObjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SayAllHelloObjects">
+      <wsdl:input message="tns:SayAllHelloObjectsSoapIn" />
+      <wsdl:output message="tns:SayAllHelloObjectsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SayHelloWSSoap" type="tns:SayHelloWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SayHelloString">
+      <soap:operation soapAction="http://tempuri.org/SayHelloString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SayHelloJson">
+      <soap:operation soapAction="http://tempuri.org/SayHelloJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SayHelloObject">
+      <soap:operation soapAction="http://tempuri.org/SayHelloObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SayAllHelloObjects">
+      <soap:operation soapAction="http://tempuri.org/SayAllHelloObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SayHelloWSSoap12" type="tns:SayHelloWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SayHelloString">
+      <soap12:operation soapAction="http://tempuri.org/SayHelloString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SayHelloJson">
+      <soap12:operation soapAction="http://tempuri.org/SayHelloJson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SayHelloObject">
+      <soap12:operation soapAction="http://tempuri.org/SayHelloObject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SayAllHelloObjects">
+      <soap12:operation soapAction="http://tempuri.org/SayAllHelloObjects" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SayHelloWS">
+    <wsdl:port name="SayHelloWSSoap" binding="tns:SayHelloWSSoap">
+      <soap:address location="http://localhost:52790/SayHelloWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SayHelloWSSoap12" binding="tns:SayHelloWSSoap12">
+      <soap12:address location="http://localhost:52790/SayHelloWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
