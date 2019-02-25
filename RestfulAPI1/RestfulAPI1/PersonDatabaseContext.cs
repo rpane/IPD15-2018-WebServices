@@ -5,7 +5,10 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Web;
+using System.Web.Http;
 
 namespace RestfulAPI1
 {
@@ -16,18 +19,19 @@ namespace RestfulAPI1
         
         //School
         const string CONN_STRING = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\WebServices\\IPD15-2018-WebServices\\RestfulAPI1\\WebServicePeople.mdf;Integrated Security=True;Connect Timeout=30";
-
         SqlConnection conn;
-
+        
         public PersonDatabaseContext()
         {
             // FIXME: Handle System.ArgumentException when conn_string is invalid
             conn = new SqlConnection(CONN_STRING);
             conn.Open();
         }
+       
 
         public List<Person> GetAllPeople()
-        {            
+        {
+            
                 using (SqlCommand command = new SqlCommand("SELECT * FROM People", conn))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -56,8 +60,8 @@ namespace RestfulAPI1
             command.Parameters.AddWithValue("@id", id);
             
                 using (SqlDataReader reader = command.ExecuteReader())
-                {
-                
+                {               
+                    
                     if (reader.Read())
                     {
                         int Id = (int)reader["Id"];
@@ -68,14 +72,14 @@ namespace RestfulAPI1
                         DateTime EndDate = (DateTime)reader["EndDate"];
                         Person p = new Person(FirstName, LastName, Salary, StartDate, EndDate);
                         p.ID = Id;
-                    return p;
+                        return p;
                     }
                     else
                     {
-                         return null;
+                        return null;
                     }
-                    
-                }
+                
+            }
             
         }
         public void AddPerson(Person c)
