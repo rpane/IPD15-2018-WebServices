@@ -11,8 +11,11 @@ namespace RestfulAPI1
 {
     public class PersonDatabaseContext
     {
-      
-        const string CONN_STRING = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\robpa\\Documents\\WSPeople.mdf;Integrated Security=True;Connect Timeout=30";
+        //Home
+        //const string CONN_STRING = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\robpa\\Documents\\WSPeople.mdf;Integrated Security=True;Connect Timeout=30";
+        
+        //School
+        const string CONN_STRING = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\WebServices\\IPD15-2018-WebServices\\RestfulAPI1\\WebServicePeople.mdf;Integrated Security=True;Connect Timeout=30";
 
         SqlConnection conn;
 
@@ -24,27 +27,27 @@ namespace RestfulAPI1
         }
 
         public List<Person> GetAllPeople()
-        {
-            using (SqlCommand command = new SqlCommand("SELECT * FROM People", conn))
-            {
-                using (SqlDataReader reader = command.ExecuteReader())
+        {            
+                using (SqlCommand command = new SqlCommand("SELECT * FROM People", conn))
                 {
-                    List<Person> result = new List<Person>();
-                    while (reader.Read())
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        int id = (int)reader["Id"];
-                        string FirstName = (string)reader["FirstName"];
-                        string LastName = (string)reader["LastName"];
-                        decimal Salary = (decimal)reader["Salary"];
-                        DateTime StartDate = (DateTime)reader["StartDate"];
-                        DateTime EndDate = (DateTime)reader["EndDate"];
-                        Person p = new Person(FirstName, LastName, Salary, StartDate, EndDate);
-                        p.ID = id;
-                        result.Add(p);
+                        List<Person> result = new List<Person>();
+                        while (reader.Read())
+                        {
+                            int id = (int)reader["Id"];
+                            string FirstName = (string)reader["FirstName"];
+                            string LastName = (string)reader["LastName"];
+                            decimal Salary = (decimal)reader["Salary"];
+                            DateTime StartDate = (DateTime)reader["StartDate"];
+                            DateTime EndDate = (DateTime)reader["EndDate"];
+                            Person p = new Person(FirstName, LastName, Salary, StartDate, EndDate);
+                            p.ID = id;
+                            result.Add(p);
+                        }
+                        return result;
                     }
-                    return result;
-                }
-            }
+                }                
         }
 
         public Person GetPersonById(int id)
@@ -67,10 +70,10 @@ namespace RestfulAPI1
                         p.ID = Id;
                     return p;
                     }
-                else
-                {
-                    return null;
-                }
+                    else
+                    {
+                         return null;
+                    }
                     
                 }
             
@@ -89,12 +92,12 @@ namespace RestfulAPI1
             }
         }
 
-        public void UpdatePerson(Person c)
+        public void UpdatePerson(int id,Person c)
         {
             using (SqlCommand updateCommand = new SqlCommand(
                 "UPDATE People SET FirstName=@FirstName, LastName=@LastName, Salary=@Salary, StartDate=@StartDate, EndDate=@EndDate WHERE Id=@Id", conn))
             {
-                updateCommand.Parameters.AddWithValue("@Id", c.ID);
+                updateCommand.Parameters.AddWithValue("@Id", id);
                 updateCommand.Parameters.AddWithValue("@FirstName", c.FirstName);
                 updateCommand.Parameters.AddWithValue("@LastName", c.LastName);
                 updateCommand.Parameters.AddWithValue("@Salary", c.Salary);

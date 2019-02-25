@@ -29,22 +29,15 @@ namespace RestfulAPI1.Controllers
         }
 
         // POST: api/Person       
-        public void Post([FromBody]string value)
-        {
-            var myJsonObj = JsonConvert.DeserializeObject<Dictionary<string, dynamic>>(value);
-            var FName = myJsonObj["FirstName"];
-            var LName = myJsonObj["LastName"];
-            var Sal = myJsonObj["Salary"];
-            var StarD = myJsonObj["StartDate"];
-            var EndD = myJsonObj["EndDate"];
-            Person x = new Person(FName, LName, Sal,StarD,EndD);
-            db.AddPerson(x);
-
+        public void Post([FromBody]Person value)
+        {            
+            db.AddPerson(value);
         }
 
         // PUT: api/Person/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]Person value)
         {
+            db.UpdatePerson(id,value);
         }
 
         // DELETE: api/Person/5
