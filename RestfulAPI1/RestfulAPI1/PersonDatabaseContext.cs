@@ -15,10 +15,10 @@ namespace RestfulAPI1
     public class PersonDatabaseContext
     {
         //Home
-        //const string CONN_STRING = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\robpa\\Documents\\WSPeople.mdf;Integrated Security=True;Connect Timeout=30";
+        const string CONN_STRING = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Programming\\Web\\IPD15-2018-WebServices\\WSPeople.mdf;Integrated Security=True;Connect Timeout=30";
         
         //School
-        const string CONN_STRING = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\WebServices\\IPD15-2018-WebServices\\RestfulAPI1\\WebServicePeople.mdf;Integrated Security=True;Connect Timeout=30";
+        //const string CONN_STRING = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\WebServices\\IPD15-2018-WebServices\\RestfulAPI1\\WebServicePeople.mdf;Integrated Security=True;Connect Timeout=30";
         SqlConnection conn;
         
         public PersonDatabaseContext()
