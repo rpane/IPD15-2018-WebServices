@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "JAC", "JAC\JAC.sqlproj", "{BC6AEF72-949E-46F6-8C2C-042F8F6AA1C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JACWebAPI", "JACWebAPI\JACWebAPI.csproj", "{BC87B324-03E5-4979-8688-AF72F5134E3F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC6AEF72-949E-46F6-8C2C-042F8F6AA1C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC6AEF72-949E-46F6-8C2C-042F8F6AA1C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC6AEF72-949E-46F6-8C2C-042F8F6AA1C9}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BC6AEF72-949E-46F6-8C2C-042F8F6AA1C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC6AEF72-949E-46F6-8C2C-042F8F6AA1C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC6AEF72-949E-46F6-8C2C-042F8F6AA1C9}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{BC87B324-03E5-4979-8688-AF72F5134E3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC87B324-03E5-4979-8688-AF72F5134E3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC87B324-03E5-4979-8688-AF72F5134E3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC87B324-03E5-4979-8688-AF72F5134E3F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4EC0723B-1367-4787-B1EE-DE25CA8B93BE}
+	EndGlobalSection
+EndGlobal
