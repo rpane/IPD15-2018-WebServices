@@ -180,9 +180,11 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Filters\AuthenticationFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="MessageHandlers\APIKeyMessageHandler.cs" />
     <Compile Include="Models\Cours.cs">
       <DependentUpon>JACDataModel.tt</DependentUpon>
     </Compile>

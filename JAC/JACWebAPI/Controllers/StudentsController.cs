@@ -9,14 +9,17 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using JACWebAPI.Models;
+using JACWebAPI.Filters;
 
 namespace JACWebAPI.Controllers
 {
+    [AuthenticationFilter]
     public class StudentsController : ApiController
     {
         private JACDBEntities db = new JACDBEntities();
 
         // GET: api/Students
+        
         public IQueryable<Student> GetStudents()
         {
             return db.Students;
