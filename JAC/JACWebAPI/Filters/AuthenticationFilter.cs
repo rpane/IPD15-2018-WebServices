@@ -12,7 +12,10 @@ namespace JACWebAPI.Filters
         {
             if (actionContext.Request.Headers.Authorization == null)
             {
-                actionContext.Response = new System.Net.Http.HttpResponseMessage(System.Net.HttpStatusCode.Unauthorized);
+                actionContext.Response = new System.Net.Http.HttpResponseMessage(System.Net.HttpStatusCode.Unauthorized)
+                {
+                    Content = new System.Net.Http.StringContent("The call is not authorized")
+                };
             }
             else
             {
@@ -27,7 +30,10 @@ namespace JACWebAPI.Filters
                 }
                 else
                 {
-                    actionContext.Response = new System.Net.Http.HttpResponseMessage(System.Net.HttpStatusCode.Unauthorized);
+                    actionContext.Response = new System.Net.Http.HttpResponseMessage(System.Net.HttpStatusCode.Unauthorized)
+                    {
+                        Content = new System.Net.Http.StringContent("The call is not authorized")
+                    };
                 }
             }
         }

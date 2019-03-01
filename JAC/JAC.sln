@@ -7,6 +7,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "JAC", "JAC\JAC.sqlproj", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JACWebAPI", "JACWebAPI\JACWebAPI.csproj", "{BC87B324-03E5-4979-8688-AF72F5134E3F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JACClient", "JACClient\JACClient.csproj", "{40DC20DD-5B55-4E2C-B2D0-9A8EECC044A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{BC87B324-03E5-4979-8688-AF72F5134E3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC87B324-03E5-4979-8688-AF72F5134E3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC87B324-03E5-4979-8688-AF72F5134E3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40DC20DD-5B55-4E2C-B2D0-9A8EECC044A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40DC20DD-5B55-4E2C-B2D0-9A8EECC044A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40DC20DD-5B55-4E2C-B2D0-9A8EECC044A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40DC20DD-5B55-4E2C-B2D0-9A8EECC044A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

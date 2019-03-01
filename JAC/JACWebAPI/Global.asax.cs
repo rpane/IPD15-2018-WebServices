@@ -23,7 +23,7 @@ namespace JACWebAPI
             GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             GlobalConfiguration.Configuration.Formatters.Remove(GlobalConfiguration.Configuration.Formatters.XmlFormatter);
 
-            GlobalConfiguration.Configuration.MessageHandlers.Add(new APIKeyMessageHandler());
+            //GlobalConfiguration.Configuration.MessageHandlers.Add(new APIKeyMessageHandler());
         }
     }
 }
